@@ -11,13 +11,13 @@ export default function GitHubCallout() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-border text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
               <GithubIcon className="w-3.5 h-3.5" />
-              Open Source & Code
+              <span>Open Source & Code</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               More code lives on GitHub.
             </h2>
             <p className="text-charcoal-light mt-3 text-base sm:text-lg leading-relaxed">
-              I use GitHub to build, experiment, and keep track of what I'm learning.
+              Explore full repositories, commits, and experiments across modern React 19, Socket.IO WebSockets, LangChain AI agents, and full-stack MERN architectures.
             </p>
           </div>
 
@@ -26,11 +26,11 @@ export default function GitHubCallout() {
               href="https://github.com/naitik-work"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-accent text-white font-semibold text-sm hover:bg-teal-hover transition-colors shadow-lg"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-accent text-white font-semibold text-sm hover:bg-teal-hover hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-lg group"
             >
               <GithubIcon className="w-5 h-5" />
               <span>Visit GitHub</span>
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
 

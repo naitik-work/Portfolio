@@ -1,24 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Mic, Sparkles } from 'lucide-react';
+import { Users, Mic } from 'lucide-react';
+import { HeadingReveal } from './motion/MotionHelpers';
 
 export default function Leadership() {
   const leadershipRoles = [
     {
-      title: 'Joint Secretary',
-      organization: 'Bitwise Programming Club — JUET',
-      icon: Users,
-      description:
-        'Contributed to programming activities, technical initiatives, and coordination within the university.',
-      highlights: ['University coding events', 'Peer technical mentorship', 'Programming initiatives'],
-    },
-    {
-      title: 'Curation Lead',
+      title: 'Curation Team Co-Head',
       organization: 'TEDx-JUET',
+      timeline: '2025 – Present · Guna, India',
       icon: Mic,
       description:
-        'Contributed to curation, content development, speaker selection/development, and event coordination.',
-      highlights: ['Speaker curation & preparation', 'Idea selection', 'Event execution coordination'],
+        'Leading the speaker curation committee, screening proposals, coaching keynote speakers, and orchestrating theme cohesion for the annual university TEDx conference.',
+      highlights: ['Speaker curation & preparation', 'Idea selection & narrative editing', 'Stage delivery coordination'],
+    },
+    {
+      title: 'Joint Secretary',
+      organization: 'Bitwise Programming Club — JUET',
+      timeline: '2025 – Present · Guna, India',
+      icon: Users,
+      description:
+        'Directing university-wide algorithmic workshops, mentoring junior peers in data structures and web development, and coordinating departmental coding hackathons.',
+      highlights: ['University coding contests', 'Technical peer mentorship', 'Full-stack development sessions'],
     },
   ];
 
@@ -28,11 +31,11 @@ export default function Leadership() {
         
         {/* Section Header */}
         <div className="max-w-2xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-subtle text-teal-accent text-xs font-semibold uppercase tracking-wider mb-4">
-            Leadership & Campus Involvement
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-subtle text-teal-accent text-xs font-semibold uppercase tracking-wider mb-4 border border-teal-border/40">
+            Leadership & Campus Initiatives
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
-            Community & Technical Initiatives
+            <HeadingReveal>Community & Technical Leadership</HeadingReveal>
           </h2>
         </div>
 
@@ -47,16 +50,17 @@ export default function Leadership() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-2xl border border-charcoal/10 shadow-card flex flex-col justify-between"
+                className="group bg-white p-7 sm:p-8 rounded-2xl border border-charcoal/10 shadow-card hover:border-teal-border/70 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 rounded-xl bg-teal-subtle text-teal-accent border border-teal-border/40">
+                    <div className="p-3 rounded-xl bg-teal-subtle text-teal-accent border border-teal-border/40 group-hover:scale-105 transition-transform duration-200">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-charcoal">{role.title}</h3>
+                      <h3 className="text-xl font-bold text-charcoal group-hover:text-teal-accent transition-colors duration-200">{role.title}</h3>
                       <p className="text-xs font-semibold text-teal-accent">{role.organization}</p>
+                      <p className="text-[11px] text-charcoal-muted mt-0.5">{role.timeline}</p>
                     </div>
                   </div>
 
@@ -69,7 +73,7 @@ export default function Leadership() {
                   {role.highlights.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 text-[11px] font-medium bg-bg-light text-charcoal-muted border border-charcoal/5 rounded-md"
+                      className="px-2.5 py-1 text-[11px] font-medium bg-bg-light text-charcoal-muted border border-charcoal/5 rounded-md hover:border-teal-border/40 hover:text-teal-accent transition-colors duration-150 cursor-default"
                     >
                       {tag}
                     </span>

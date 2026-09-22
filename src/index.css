@@ -11,6 +11,12 @@
     background-color: #F7F5F0;
     color: #171717;
   }
+
+  /* Accessibility focus ring */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #176B67;
+    outline-offset: 2px;
+  }
 }
 
 /* Custom subtle scrollbar */
@@ -34,4 +40,14 @@
 /* Editorial image shadow styling */
 .editorial-img-container {
   box-shadow: 0 20px 40px -15px rgba(23, 23, 23, 0.1), 0 0 0 1px rgba(23, 23, 23, 0.06);
+}
+
+/* Reduced motion accessibility compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
